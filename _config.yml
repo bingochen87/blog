@@ -85,9 +85,10 @@ theme: hexo-theme-matery
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: git
-  repo: git@github.com:bingochen87/blog.git
-  branch: gh-pages
+  - type: git
+    repo: git@github.com:bingochen87/blog.git
+    branch: gh-pages
+  - type: baidu_url_submitter
 
 search:
   path: search.xml
@@ -102,3 +103,14 @@ wordCount:
   postWordCount: true
   min2read: true
   totalCount: true
+
+sitemap:
+  path: sitemap.xml
+baidusitemap:
+  path: baidusitemap.xml
+
+baidu_url_submit:
+  count: 10
+  host: blog.bingozai.com
+  token: WG3lzkRGtNUkHsi1
+  path: baidu_urls.txt
