@@ -3,6 +3,7 @@ title: Install Map3 Edge
 tags: ["Map3", "Linux", "Mac"]
 categories: ["技术", "Map3"]
 summary: Install Map3 Edge On Linux Or Mac
+reward: true
 ---
 ## Install Map3 Edge On Linux Or Mac
 ---

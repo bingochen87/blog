@@ -3,6 +3,7 @@ title: Kibana Sample Logs Data Dashboard
 category: 技术
 tags: ["Kibana", "ES", "Elasticsearch"]
 summary: Add Kibana sample logs data dashboard
+reward: true
 ---
 
 因为`map3-node-edge`从原来的`map3-edge-dashboard`移到`docker-map3/map3-edge`并开源了。过程中做了优化处理，去掉了几个`docner container`，其中包括`metricbeat`和`heartbeat`。在处理总的`Kibana dashboard`过程中，不小心将几个索引数据删除掉了，导致`[Logs] Web Traffic`这个Dashboard用不了。

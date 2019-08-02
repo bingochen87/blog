@@ -3,6 +3,7 @@ title: Deploy Map3 Edge on AWS
 tags: ["Map3", "Hyperion", "HYN", "AWS", "Map"]
 categories: ["技术", "Map3"]
 summary: Deploy Map3 Edge On Amazon AWS
+reward: true
 ---
 
 ## Deploy Map3 Edge On Amazon AWS

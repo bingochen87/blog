@@ -3,6 +3,7 @@ title: Deploy Map3 Edge on AliCloud
 tags: ["Map3", "Hyperion", "HYN", "AliCloud", "Map", "Aliyun"]
 categories: ["技术", "Map3"]
 summary: Deploy Map3 Edge On AliCloud
+reward: true
 ---
 
 ## Deploy Map3 Edge On AliCloud
