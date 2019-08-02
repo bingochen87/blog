@@ -140,7 +140,7 @@ mathjax:
 # 文章字数统计、阅读时长、总字数统计
 # 激活前请确认你已经安装了 hexo-wordcount 插件，安装命令: `npm i --save hexo-wordcount`
 wordCount:
-  enable: false
+  enable: true
   postWordCount: true
   min2read: true
   totalCount: true
@@ -154,7 +154,7 @@ clicklove:
 # 在”关于”页面中配置个人信息，包括头像、职业和个人介绍.
 profile:
   avatar: /medias/avatar.png
-  career: 软件工程师
+  career: 码代码的
   introduction: 宁可卑微如尘土，不愿扭曲如蛆虫。
 
 # config my projects informations in about page.
@@ -394,3 +394,5 @@ featureImages:
 reprint:
   enable: true # whether enable reprint section 是否启用“转载规则限定模块”
   default: cc_by
+
+widgetpack: 20127

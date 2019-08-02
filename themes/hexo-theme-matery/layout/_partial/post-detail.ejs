@@ -69,6 +69,12 @@
             </div>
             <hr/>
 
+            <%if (theme.widgetpack) { %>
+                <%- partial('post-widgetpack') %>
+            <% } %>
+
+            <hr/>
+
             <% if (theme.reward && theme.reward.enable) { %>
             <%- partial('_partial/reward') %>
             <% } %>
