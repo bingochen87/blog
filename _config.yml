@@ -87,7 +87,7 @@ theme: hexo-theme-matery
 deploy:
   type: git
   repo: git@github.com:bingochen87/website.git
-  branch: master
+  branch: gh-pages
 
 search:
   path: search.xml
