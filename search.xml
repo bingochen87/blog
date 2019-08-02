@@ -33,37 +33,6 @@
     
     
     <entry>
-      <title>Install Map3 Edge</title>
-      <link href="/2019/08/02/install-map3-edge-on-linux-or-mac/"/>
-      <url>/2019/08/02/install-map3-edge-on-linux-or-mac/</url>
-      
-        <content type="html"><![CDATA[<h2 id="Install-Map3-Edge-On-Linux-Or-Mac"><a href="#Install-Map3-Edge-On-Linux-Or-Mac" class="headerlink" title="Install Map3 Edge On Linux Or Mac"></a>Install Map3 Edge On Linux Or Mac</h2><hr><h3 id="Install-from-script"><a href="#Install-from-script" class="headerlink" title="Install from script"></a>Install from script</h3><h4 id="Curl"><a href="#Curl" class="headerlink" title="Curl"></a>Curl</h4><p>To launch a map3 edge, you can use the install script using cURL:</p><pre class=" language-bash"><code class="language-bash">curl -o- https://hyperion-deploy.s3-ap-southeast-1.amazonaws.com/edge/install.sh <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">bash</span></code></pre><h4 id="Wget"><a href="#Wget" class="headerlink" title="Wget"></a>Wget</h4><pre class=" language-bash"><code class="language-bash"><span class="token function">wget</span> -qO- https://hyperion-deploy.s3-ap-southeast-1.amazonaws.com/edge/install.sh <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">bash</span></code></pre>]]></content>
-      
-      
-      <categories>
-          
-          <category> 技术 </category>
-          
-          <category> Map3 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Map3 </tag>
-            
-            <tag> Linux </tag>
-            
-            <tag> Mac </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Deploy Map3 Edge on AWS</title>
       <link href="/2019/08/02/deploy-map3-on-aws/"/>
       <url>/2019/08/02/deploy-map3-on-aws/</url>
@@ -91,6 +60,37 @@
             <tag> Map </tag>
             
             <tag> AWS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Install Map3 Edge</title>
+      <link href="/2019/08/02/install-map3-edge-on-linux-or-mac/"/>
+      <url>/2019/08/02/install-map3-edge-on-linux-or-mac/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Install-Map3-Edge-On-Linux-Or-Mac"><a href="#Install-Map3-Edge-On-Linux-Or-Mac" class="headerlink" title="Install Map3 Edge On Linux Or Mac"></a>Install Map3 Edge On Linux Or Mac</h2><hr><h3 id="Install-from-script"><a href="#Install-from-script" class="headerlink" title="Install from script"></a>Install from script</h3><h4 id="Curl"><a href="#Curl" class="headerlink" title="Curl"></a>Curl</h4><p>To launch a map3 edge, you can use the install script using cURL:</p><pre class=" language-bash"><code class="language-bash">curl -o- https://hyperion-deploy.s3-ap-southeast-1.amazonaws.com/edge/install.sh <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">bash</span></code></pre><h4 id="Wget"><a href="#Wget" class="headerlink" title="Wget"></a>Wget</h4><pre class=" language-bash"><code class="language-bash"><span class="token function">wget</span> -qO- https://hyperion-deploy.s3-ap-southeast-1.amazonaws.com/edge/install.sh <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">bash</span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+          <category> Map3 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Map3 </tag>
+            
+            <tag> Linux </tag>
+            
+            <tag> Mac </tag>
             
         </tags>
       
