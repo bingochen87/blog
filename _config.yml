@@ -86,7 +86,7 @@ theme: hexo-theme-matery
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com:bingochen87/website.git
+  repo: git@github.com:bingochen87/blog.git
   branch: gh-pages
 
 search:
