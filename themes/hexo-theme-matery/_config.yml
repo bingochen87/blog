@@ -239,7 +239,7 @@ postCalendar: true
 gitalk:
   enable: true
   owner: bingochen87
-  repo: gitalk
+  repo: blog
   oauth:
     clientId: 3e1f09f50e23cc467841
     clientSecret: c113ef5409b2dc1206aacf950225497cdd3d48be
