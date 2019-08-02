@@ -4,9 +4,8 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Install Map3 Edge, Blog, blog, Chen bin, 陈斌, Bingo, bingo, bingo-zi, bingo-zai, bingozai, BingoZai, 博客">
-    <meta name="description" content="Install Map3 Edge On Linux Or Mac
-Install from scriptCurlTo launch a map3 edge, you can use the install script using cUR">
+    <meta name="keywords" content="Kibana Sample Logs Data Dashboard, Blog, blog, Chen bin, 陈斌, Bingo, bingo, bingo-zi, bingo-zai, bingozai, BingoZai, 博客">
+    <meta name="description" content="因为map3-node-edge从原来的map3-edge-dashboard移到docker-map3/map3-edge并开源了。过程中做了优化处理，去掉了几个docner container，其中包括metricbeat和heartb">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +13,7 @@ Install from scriptCurlTo launch a map3 edge, you can use the install script usi
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Install Map3 Edge | 冰果仔的 Blog</title>
+    <title>Kibana Sample Logs Data Dashboard | 冰果仔的 Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -261,13 +260,13 @@ Install from scriptCurlTo launch a map3 edge, you can use the install script usi
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Install Map3 Edge
+                        Kibana Sample Logs Data Dashboard
                     </div>
                 </div>
             </div>
@@ -378,16 +377,16 @@ Install from scriptCurlTo launch a map3 edge, you can use the install script usi
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Map3/" target="_blank">
-                                <span class="chip bg-color">Map3</span>
+                            <a href="/tags/Kibana/" target="_blank">
+                                <span class="chip bg-color">Kibana</span>
                             </a>
                         
-                            <a href="/tags/Linux/" target="_blank">
-                                <span class="chip bg-color">Linux</span>
+                            <a href="/tags/ES/" target="_blank">
+                                <span class="chip bg-color">ES</span>
                             </a>
                         
-                            <a href="/tags/Mac/" target="_blank">
-                                <span class="chip bg-color">Mac</span>
+                            <a href="/tags/Elasticsearch/" target="_blank">
+                                <span class="chip bg-color">Elasticsearch</span>
                             </a>
                         
                     </div>
@@ -400,10 +399,6 @@ Install from scriptCurlTo launch a map3 edge, you can use the install script usi
                         
                             <a href="/categories/技术/" class="post-category" target="_blank">
                                 技术
-                            </a>
-                        
-                            <a href="/categories/技术/Map3/" class="post-category" target="_blank">
-                                Map3
                             </a>
                         
                     </div>
@@ -430,10 +425,16 @@ Install from scriptCurlTo launch a map3 edge, you can use the install script usi
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Install-Map3-Edge-On-Linux-Or-Mac"><a href="#Install-Map3-Edge-On-Linux-Or-Mac" class="headerlink" title="Install Map3 Edge On Linux Or Mac"></a>Install Map3 Edge On Linux Or Mac</h2><hr>
-<h3 id="Install-from-script"><a href="#Install-from-script" class="headerlink" title="Install from script"></a>Install from script</h3><h4 id="Curl"><a href="#Curl" class="headerlink" title="Curl"></a>Curl</h4><p>To launch a map3 edge, you can use the install script using cURL:</p>
-<pre class=" language-bash"><code class="language-bash">curl -o- https://hyperion-deploy.s3-ap-southeast-1.amazonaws.com/edge/install.sh <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">bash</span></code></pre>
-<h4 id="Wget"><a href="#Wget" class="headerlink" title="Wget"></a>Wget</h4><pre class=" language-bash"><code class="language-bash"><span class="token function">wget</span> -qO- https://hyperion-deploy.s3-ap-southeast-1.amazonaws.com/edge/install.sh <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">bash</span></code></pre>
+                <p>因为<code>map3-node-edge</code>从原来的<code>map3-edge-dashboard</code>移到<code>docker-map3/map3-edge</code>并开源了。过程中做了优化处理，去掉了几个<code>docner container</code>，其中包括<code>metricbeat</code>和<code>heartbeat</code>。在处理总的<code>Kibana dashboard</code>过程中，不小心将几个索引数据删除掉了，导致<code>[Logs] Web Traffic</code>这个Dashboard用不了。</p>
+<p>我首选想到的办法，居然是傻傻地照着原来的设置一个个地加回来，并且因为现在只剩下<code>filebeat</code>这个数据源，我天真地以为<code>kibana_sample_logs_data</code>这个索引数据是从其他两个已经是删除的beat来的，有些字段还对不上。</p>
+<p>折腾一番后，查了一下<code>kibana_sample_logs_data</code>发现这个数据是可以手动添加了。操作后，最终发现整个<code>[Logs] Web Traffic</code>这个Dashboard，就是点几下就可以出来，根本不需要自己去配置。哎，业务不精，真的是害死人。</p>
+<p>添加方法:</p>
+<ul>
+<li>去到kibana首页（我使用的是KibanaCloud,首页的url为：app/kibana#/home）</li>
+<li>在<code>Add sample data</code>这里，点击下方的链接（<code>Load a data set and a Kibana dashboard</code>）</li>
+<li>跳转后，在列表里面的<code>Sample web logs</code>点击按钮</li>
+<li>等待处理完成，就可以在<code>Dashboard</code>这一个链接页面里面看到有<code>[Logs] Web Traffic</code>这个Dashboard</li>
+</ul>
 
             </div>
             <hr/>
@@ -592,9 +593,9 @@ Install from scriptCurlTo launch a map3 edge, you can use the install script usi
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Install Map3 Edge》
+                    《Kibana Sample Logs Data Dashboard》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/08/02/install-map3-edge-on-linux-or-mac/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/08/02/sample-logs-data/" property="cc:attributionName"
                rel="cc:attributionURL">
                 陈斌
             </a> 采用
@@ -635,7 +636,7 @@ Install from scriptCurlTo launch a map3 edge, you can use the install script usi
         repo: 'gitalk',
         owner: 'bingochen87',
         admin: ["bingochen87"],
-        id: '2019-08-02T09-38-26',
+        id: '2019-08-02T15-04-32',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -656,9 +657,10 @@ Install from scriptCurlTo launch a map3 edge, you can use the install script usi
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2019/08/02/sample-logs-data/">
                     <div class="card-image">
@@ -676,9 +678,9 @@ Install from scriptCurlTo launch a map3 edge, you can use the install script usi
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-02
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-02
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -691,6 +693,7 @@ Install from scriptCurlTo launch a map3 edge, you can use the install script usi
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -717,19 +720,19 @@ Install from scriptCurlTo launch a map3 edge, you can use the install script usi
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/08/02/deploy-map3-on-aws/">
+                <a href="/2019/08/02/install-map3-edge-on-linux-or-mac/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Deploy Map3 Edge on AWS">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Install Map3 Edge">
                         
-                        <span class="card-title">Deploy Map3 Edge on AWS</span>
+                        <span class="card-title">Install Map3 Edge</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Deploy Map3 Edge On Amazon AWS
+                            Install Map3 Edge On Linux Or Mac
                         
                     </div>
                     <div class="publish-info">
@@ -759,20 +762,12 @@ Install from scriptCurlTo launch a map3 edge, you can use the install script usi
                         <span class="chip bg-color">Map3</span>
                     </a>
                     
-                    <a href="/tags/Hyperion/" target="_blank">
-                        <span class="chip bg-color">Hyperion</span>
+                    <a href="/tags/Linux/" target="_blank">
+                        <span class="chip bg-color">Linux</span>
                     </a>
                     
-                    <a href="/tags/HYN/" target="_blank">
-                        <span class="chip bg-color">HYN</span>
-                    </a>
-                    
-                    <a href="/tags/Map/" target="_blank">
-                        <span class="chip bg-color">Map</span>
-                    </a>
-                    
-                    <a href="/tags/AWS/" target="_blank">
-                        <span class="chip bg-color">AWS</span>
+                    <a href="/tags/Mac/" target="_blank">
+                        <span class="chip bg-color">Mac</span>
                     </a>
                     
                 </div>
