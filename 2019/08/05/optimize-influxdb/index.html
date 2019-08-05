@@ -4,9 +4,8 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Install Map3 Edge, Blog, blog, Chen bin, 陈斌, Bingo, bingo, bingo-zi, bingo-zai, bingozai, BingoZai, 博客">
-    <meta name="description" content="Install Map3 Edge On Linux Or Mac
-Install from scriptCurlTo launch a map3 edge, you can use the install script using cUR">
+    <meta name="keywords" content="使用连续查询及保留策略优化InfluxDB存储空间及内存占用, Blog, blog, Chen bin, 陈斌, Bingo, bingo, bingo-zi, bingo-zai, bingozai, BingoZai, 博客">
+    <meta name="description" content="前言现在在开发的docker-map3/map3-edge志在做一个去中心化的 map 支持服务，理想状态下是用最低的资源，就可以启动一个 map3 节点，里面包括有反向代理 、缓存、访问日志收集、该节点的系统状态及访客统计信息收集，Doc">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +14,7 @@ Install from scriptCurlTo launch a map3 edge, you can use the install script usi
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google-site-verification" content="CBNzwOC3eO-DR905SiwMLYzufMXYnK7V87daNMoi_BQ">
-    <title>Install Map3 Edge | 冰果仔</title>
+    <title>使用连续查询及保留策略优化InfluxDB存储空间及内存占用 | 冰果仔</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -262,13 +261,13 @@ Install from scriptCurlTo launch a map3 edge, you can use the install script usi
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Install Map3 Edge
+                        使用连续查询及保留策略优化InfluxDB存储空间及内存占用
                     </div>
                 </div>
             </div>
@@ -379,16 +378,32 @@ Install from scriptCurlTo launch a map3 edge, you can use the install script usi
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Map3/" target="_blank">
-                                <span class="chip bg-color">Map3</span>
+                            <a href="/tags/InfluxDB/" target="_blank">
+                                <span class="chip bg-color">InfluxDB</span>
                             </a>
                         
-                            <a href="/tags/Linux/" target="_blank">
-                                <span class="chip bg-color">Linux</span>
+                            <a href="/tags/时序数据库/" target="_blank">
+                                <span class="chip bg-color">时序数据库</span>
                             </a>
                         
-                            <a href="/tags/Mac/" target="_blank">
-                                <span class="chip bg-color">Mac</span>
+                            <a href="/tags/InfluxDB存储优化/" target="_blank">
+                                <span class="chip bg-color">InfluxDB存储优化</span>
+                            </a>
+                        
+                            <a href="/tags/InfluxDB内存优化/" target="_blank">
+                                <span class="chip bg-color">InfluxDB内存优化</span>
+                            </a>
+                        
+                            <a href="/tags/Continuous-Queries/" target="_blank">
+                                <span class="chip bg-color">Continuous Queries</span>
+                            </a>
+                        
+                            <a href="/tags/Retention-Policies/" target="_blank">
+                                <span class="chip bg-color">Retention Policies</span>
+                            </a>
+                        
+                            <a href="/tags/Docker/" target="_blank">
+                                <span class="chip bg-color">Docker</span>
                             </a>
                         
                     </div>
@@ -403,8 +418,8 @@ Install from scriptCurlTo launch a map3 edge, you can use the install script usi
                                 技术
                             </a>
                         
-                            <a href="/categories/技术/Map3/" class="post-category" target="_blank">
-                                Map3
+                            <a href="/categories/技术/数据库/" class="post-category" target="_blank">
+                                数据库
                             </a>
                         
                     </div>
@@ -415,21 +430,21 @@ Install from scriptCurlTo launch a map3 edge, you can use the install script usi
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-08-02
+                    2019-08-05
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        54
+                        1.7k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        7 分
                     </div>
                     
                 
@@ -445,10 +460,93 @@ Install from scriptCurlTo launch a map3 edge, you can use the install script usi
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Install-Map3-Edge-On-Linux-Or-Mac"><a href="#Install-Map3-Edge-On-Linux-Or-Mac" class="headerlink" title="Install Map3 Edge On Linux Or Mac"></a>Install Map3 Edge On Linux Or Mac</h2><hr>
-<h3 id="Install-from-script"><a href="#Install-from-script" class="headerlink" title="Install from script"></a>Install from script</h3><h4 id="Curl"><a href="#Curl" class="headerlink" title="Curl"></a>Curl</h4><p>To launch a map3 edge, you can use the install script using cURL:</p>
-<pre class=" language-bash"><code class="language-bash">curl -o- https://hyperion-deploy.s3-ap-southeast-1.amazonaws.com/edge/install.sh <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">bash</span></code></pre>
-<h4 id="Wget"><a href="#Wget" class="headerlink" title="Wget"></a>Wget</h4><pre class=" language-bash"><code class="language-bash"><span class="token function">wget</span> -qO- https://hyperion-deploy.s3-ap-southeast-1.amazonaws.com/edge/install.sh <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">bash</span></code></pre>
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>现在在开发的<a href="https://github.com/hyperion-hyn/docker-map3/tree/master/map3-edge" target="_blank" rel="noopener">docker-map3/map3-edge</a>志在做一个去中心化的 <code>map</code> 支持服务，理想状态下是用最低的资源，就可以启动一个 <code>map3</code> 节点，里面包括有反向代理 、缓存、访问日志收集、该节点的系统状态及访客统计信息收集，Docker 镜像的自动更新以及该节点的数据展示。集成了这么多东西，性能优化是很关键的一环。</p>
+<h2 id="现在在使用的功能"><a href="#现在在使用的功能" class="headerlink" title="现在在使用的功能"></a>现在在使用的功能</h2><ul>
+<li><a href="https://github.com/hyperion-hyn/caddy" target="_blank">hyperion-hyn/caddy</a> (fork from <a href="https://github.com/caddyserver/caddy" target="_blank">caddyserver/caddy</a>：用于反向代理及做地图的 tile 文件缓存，未来还会加入 <code>UPNP</code> 、 <code>P2P</code> 及 <code>keyless</code> 功能；</li>
+<li>filebeat：用于访问日志上报到 Elasticsearch；</li>
+<li>telegraf：用于收集节点的 CPU 及内存使用情况，将数据记录到 InfluxDB；</li>
+<li><a href="https://github.com/hyperion-hyn/geostat" target="_blank">hyperion-hyn/geostat</a>：处理访客信息；</li>
+<li><a href="https://github.com/hyperion-hyn/ouroboros" target="_blank">hyperion-hyn/ouroboros</a>(fork from <a href="https://github.com/pyouroboros/ouroboros" target="_blank">pyouroboros/ouroboros</a>：自动更新在运行的 Docker container 的镜像到最新版；</li>
+<li>InfluxDB：记录节点系统监控信息及该节点访客的统计信息，用于在 Grafana中显示；</li>
+<li>Grafana：显示系统监控信息及该节点访客统计信息。</li>
+</ul>
+<h2 id="InfluxDB-没优化前导致的问题"><a href="#InfluxDB-没优化前导致的问题" class="headerlink" title="InfluxDB 没优化前导致的问题"></a>InfluxDB 没优化前导致的问题</h2><p>前文有说过，我们理想的状态下是以最低的配置就可以起一个节点，以 Amazon AWS 免费的 t2.micro 实例类型为例，配置为1 VCPU, 1 GB 内存以及8 GB 存储。要启动这么多功能是一个不小的考验，特别是需要运行一个数据。</p>
+<p>在优化前，如果统计的数据量很小（或者是用户选择展示的时间区间内数据比较小），问题并不大。但我们在测试极端情况时，用 AB Test 去刷数据，并且在 Grafana 里面查看。登录到主机里面查看，可以看到 InfluxDB 占用到了 30% 的内存（1GB的内存配置）, 总内存占用会占到70%多，有时候还会到90%多。刷的数据很多的时候，存储也会有问题，毕竟才8 GB 的存储空间。</p>
+<p><img src="https://bingozai.s3.ap-east-1.amazonaws.com/blog/2019/08/05/influxdb.png" alt="没优化前的内存占用"></p>
+<h2 id="如何优化"><a href="#如何优化" class="headerlink" title="如何优化"></a>如何优化</h2><h3 id="查找问题"><a href="#查找问题" class="headerlink" title="查找问题"></a>查找问题</h3><p>优化存储的话，基本是基于 InfluxDB 的 <code>Retention Policies</code> 做处理就可以，我们默认是保留30天的数据。但这个其实数据也挺多的了，还可以再优化。</p>
+<p>优化内存占用，首页要确定的是在写 InfluxDB 数据的时候就会占用很多内存还是说在查看的时候数据量比较大占用的内存比较多。</p>
+<p>写入 InfluxDB 有两种请求方式</p>
+<ul>
+<li>http</li>
+<li>UDP</li>
+</ul>
+<p>我在测试的时候，无论是用http还是UDP，用 <code>BatchPoints</code> 的方式快速写入 50K 条数据，内存基本没什么波动。但如果是在 Grafana 后台去展示数据，数据量越多，占用的内存就越高。所以可以确定的是内存占用高是查询太多数据造成的。</p>
+<h3 id="优化处理资料"><a href="#优化处理资料" class="headerlink" title="优化处理资料"></a>优化处理资料</h3><p>查了很多资料，都是说用 <code>Continuous Queries</code> + <code>Retention Policies</code> 可以优化，但都没有详细的说明。后来我们团队的大佬 <a href="https://github.com/zouguangxian" target="_blank" rel="noopener">邹光先</a>先生 找到了 <a href="https://pommi.nethuis.nl/collectd-influxdb-grafana-with-downsampling/" target="_blank" rel="noopener">Server stats with collectd, InfluxDB and Grafana (with downsampling)</a> 这个有关 InfluxDB 数据下采样处理的文章，根据这个文章提供的方法结合我们的实际情况处理。</p>
+<h3 id="优化处理"><a href="#优化处理" class="headerlink" title="优化处理"></a>优化处理</h3><p><a href="https://pommi.nethuis.nl/collectd-influxdb-grafana-with-downsampling/" target="_blank" rel="noopener">Server stats with collectd, InfluxDB and Grafana (with downsampling)</a> 的基本策略就是用 <code>Continuous Queries</code> + <code>Retention Policies</code>。</p>
+<ul>
+<li><p><code>Retention Policies</code> 保留策略我们是使用以下几种：</p>
+<ul>
+<li>autogen：<code>autogen</code> 默认是永久存储的，我们将它的保留策略改为 <code>200m</code>（为什么是200分钟，因为在 Grafana Dashboard 里面如果是选择 Last 3 hours，应用的保留策略是 <code>autogen</code> 的，如果是选择 Last 6 hours，应用的保留策略就会变成 <code>day</code>）</li>
+<li>day: </li>
+<li>week</li>
+<li>month</li>
+<li>year</li>
+</ul>
+</li>
+<li><p><code>Continuous Queries</code> 我们是生成了以下几条：</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> CONTINUOUS QUERY \"cq_day\" <span class="token keyword">ON</span> \"$<span class="token keyword">database</span>\" <span class="token keyword">BEGIN</span> <span class="token keyword">SELECT</span> <span class="token function">sum</span><span class="token punctuation">(</span>count<span class="token punctuation">)</span> <span class="token keyword">as</span> count <span class="token keyword">INTO</span> \"$<span class="token keyword">database</span>\"<span class="token punctuation">.</span>\"day\"<span class="token punctuation">.</span>:MEASUREMENT <span class="token keyword">FROM</span> <span class="token operator">/</span><span class="token punctuation">.</span><span class="token operator">*</span><span class="token operator">/</span> <span class="token keyword">GROUP</span> <span class="token keyword">BY</span> time<span class="token punctuation">(</span>60s<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token operator">*</span> <span class="token keyword">END</span><span class="token punctuation">;</span>
+<span class="token keyword">CREATE</span> CONTINUOUS QUERY \"cq_week\" <span class="token keyword">ON</span> \"$<span class="token keyword">database</span>\" <span class="token keyword">BEGIN</span> <span class="token keyword">SELECT</span> <span class="token function">sum</span><span class="token punctuation">(</span>count<span class="token punctuation">)</span> <span class="token keyword">as</span> count <span class="token keyword">INTO</span> \"$<span class="token keyword">database</span>\"<span class="token punctuation">.</span>\"week\"<span class="token punctuation">.</span>:MEASUREMENT <span class="token keyword">FROM</span> <span class="token operator">/</span><span class="token punctuation">.</span><span class="token operator">*</span><span class="token operator">/</span> <span class="token keyword">GROUP</span> <span class="token keyword">BY</span> time<span class="token punctuation">(</span>300s<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token operator">*</span> <span class="token keyword">END</span><span class="token punctuation">;</span>
+<span class="token keyword">CREATE</span> CONTINUOUS QUERY \"cq_month\" <span class="token keyword">ON</span> \"$<span class="token keyword">database</span>\" <span class="token keyword">BEGIN</span> <span class="token keyword">SELECT</span> <span class="token function">sum</span><span class="token punctuation">(</span>count<span class="token punctuation">)</span> <span class="token keyword">as</span> count <span class="token keyword">INTO</span> \"$<span class="token keyword">database</span>\"<span class="token punctuation">.</span>\"month\"<span class="token punctuation">.</span>:MEASUREMENT <span class="token keyword">FROM</span> <span class="token operator">/</span><span class="token punctuation">.</span><span class="token operator">*</span><span class="token operator">/</span> <span class="token keyword">GROUP</span> <span class="token keyword">BY</span> time<span class="token punctuation">(</span>1800s<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token operator">*</span> <span class="token keyword">END</span><span class="token punctuation">;</span>
+<span class="token keyword">CREATE</span> CONTINUOUS QUERY \"cq_year\" <span class="token keyword">ON</span> \"$<span class="token keyword">database</span>\" <span class="token keyword">BEGIN</span> <span class="token keyword">SELECT</span> <span class="token function">sum</span><span class="token punctuation">(</span>count<span class="token punctuation">)</span> <span class="token keyword">as</span> count <span class="token keyword">INTO</span> \"$<span class="token keyword">database</span>\"<span class="token punctuation">.</span>\"year\"<span class="token punctuation">.</span>:MEASUREMENT <span class="token keyword">FROM</span> <span class="token operator">/</span><span class="token punctuation">.</span><span class="token operator">*</span><span class="token operator">/</span> <span class="token keyword">GROUP</span> <span class="token keyword">BY</span> time<span class="token punctuation">(</span>21600s<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token operator">*</span> <span class="token keyword">END</span><span class="token punctuation">;</span></code></pre>
+</li>
+</ul>
+<p><code>https://github.com/hyperion-hyn/docker-map3/blob/keyless/map3-edge/docker/geostat/rootfs/optimize-influxdb.sh</code> 的示例代码，<code>telegraf</code> 的也是差不多的</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token shebang important">#!/bin/sh</span>
+<span class="token comment" spellcheck="true"># refer: https://pommi.nethuis.nl/collectd-influxdb-grafana-with-downsampling/</span>
+
+options<span class="token operator">=</span>`cat /etc/geostat/geostat.json <span class="token operator">|</span> <span class="token function">grep</span> -E <span class="token string">'(port|host|database)'</span> <span class="token operator">|</span> <span class="token function">sed</span> -e <span class="token string">'s/"[ ]*:[ ]*"/":"/g'</span> -e <span class="token string">'s/^[ ]*//'</span> -e <span class="token string">'s/,[ ]*$//'</span><span class="token variable"><span class="token variable">`</span>
+database<span class="token operator">=</span><span class="token variable">`</span></span><span class="token function">printf</span> <span class="token string">"<span class="token variable">$options</span>"</span> <span class="token operator">|</span> <span class="token function">sed</span> -n -e <span class="token string">'/database/p'</span> <span class="token operator">|</span> <span class="token function">sed</span> -e <span class="token string">'s/^[^:]*://'</span> -e <span class="token string">'s/"//g'</span><span class="token variable"><span class="token variable">`</span>
+host<span class="token operator">=</span><span class="token variable">`</span></span><span class="token function">printf</span> <span class="token string">"<span class="token variable">$options</span>"</span> <span class="token operator">|</span> <span class="token function">sed</span> -n -e <span class="token string">'/host/p'</span> <span class="token operator">|</span> <span class="token function">sed</span> -e <span class="token string">'s/^[^:]*://'</span> -e <span class="token string">'s/"//g'</span><span class="token variable"><span class="token variable">`</span>
+port<span class="token operator">=</span><span class="token variable">`</span></span><span class="token function">printf</span> <span class="token string">"<span class="token variable">$options</span>"</span> <span class="token operator">|</span> <span class="token function">sed</span> -n -e <span class="token string">'/port/p'</span> <span class="token operator">|</span> <span class="token function">sed</span> -e <span class="token string">'s/^[^:]*://'</span> -e <span class="token string">'s/"//g'</span>`
+
+<span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token operator">!</span> -z <span class="token string">"<span class="token variable">$host</span>"</span> -a <span class="token operator">!</span> -z <span class="token string">"<span class="token variable">$port</span>"</span> -a <span class="token operator">!</span> -z <span class="token string">"<span class="token variable">$database</span>"</span> <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+url<span class="token operator">=</span><span class="token string">"http://<span class="token variable">$host</span>:<span class="token variable">$port</span>"</span>
+
+curl --retry 10 --retry-connrefused --retry-delay 1 <span class="token string">"<span class="token variable">$url</span>/ping"</span>
+
+curl -i -XPOST <span class="token string">"<span class="token variable">$url</span>/query"</span> --data-urlencode <span class="token string">"q=
+CREATE DATABASE <span class="token variable">$database</span>;
+ALTER RETENTION POLICY \"autogen\" on <span class="token variable">$database</span> DURATION 200m SHARD DURATION 1h;
+CREATE RETENTION POLICY \"day\" ON <span class="token variable">$database</span> DURATION 1d REPLICATION 1;
+CREATE RETENTION POLICY \"week\" ON <span class="token variable">$database</span> DURATION 7d REPLICATION 1;
+CREATE RETENTION POLICY \"month\" ON <span class="token variable">$database</span> DURATION 31d REPLICATION 1;
+CREATE RETENTION POLICY \"year\" ON <span class="token variable">$database</span> DURATION 366d REPLICATION 1;
+CREATE CONTINUOUS QUERY \"cq_day\" ON \"<span class="token variable">$database</span>\" BEGIN SELECT sum(count) as count INTO \"<span class="token variable">$database</span>\".\"day\".:MEASUREMENT FROM /.*/ GROUP BY time(60s),* END;
+CREATE CONTINUOUS QUERY \"cq_week\" ON \"<span class="token variable">$database</span>\" BEGIN SELECT sum(count) as count INTO \"<span class="token variable">$database</span>\".\"week\".:MEASUREMENT FROM /.*/ GROUP BY time(300s),* END;
+CREATE CONTINUOUS QUERY \"cq_month\" ON \"<span class="token variable">$database</span>\" BEGIN SELECT sum(count) as count INTO \"<span class="token variable">$database</span>\".\"month\".:MEASUREMENT FROM /.*/ GROUP BY time(1800s),* END;
+CREATE CONTINUOUS QUERY \"cq_year\" ON \"<span class="token variable">$database</span>\" BEGIN SELECT sum(count) as count INTO \"<span class="token variable">$database</span>\".\"year\".:MEASUREMENT FROM /.*/ GROUP BY time(21600s),* END;
+CREATE RETENTION POLICY \"forever\" ON \"<span class="token variable">$database</span>\" DURATION INF REPLICATION 1;
+"</span>
+
+curl -i -XPOST <span class="token string">"<span class="token variable">$url</span>/write?db=<span class="token variable">$database</span>&amp;rp=forever"</span> --data-binary <span class="token string">"
+rp_config,idx=1 rp=\"autogen\",start=0i,end=12000000i,interval=\"10s\" -9223372036854775806
+rp_config,idx=2 rp=\"day\",start=12000000i,end=86401000i,interval=\"60s\" -9223372036854775806
+rp_config,idx=3 rp=\"week\",start=86401000i,end=604801000i,interval=\"300s\" -9223372036854775806
+rp_config,idx=4 rp=\"month\",start=604801000i,end=2678401000i,interval=\"1800s\" -9223372036854775806
+rp_config,idx=5 rp=\"year\",start=2678401000i,end=31622401000i,interval=\"21600s\" -9223372036854775806
+"</span>
+<span class="token keyword">fi</span>
+
+<span class="token keyword">exit</span> 0</code></pre>
+<p><strong>特别提醒，优化后的处理，需要的 Grafana 版本在6.x或以上。 Grafana Dashboard 的配置，参考<a href="https://github.com/hyperion-hyn/docker-map3/blob/master/map3-edge/docker/grafana/rootfs/dashboards/default.json" target="_blank" rel="noopener">https://github.com/hyperion-hyn/docker-map3/blob/master/map3-edge/docker/grafana/rootfs/dashboards/default.json</a></strong></p>
+<h2 id="优化后表现"><a href="#优化后表现" class="headerlink" title="优化后表现"></a>优化后表现</h2><p>经过优化后，InfluxDB 的内存占用，很好地控制在 10% 以下，在Grafana 后台可以看到 <code>map3-edge</code> 的总内存占用（以1 GB 配置为例），维持在 50% 以下。</p>
+<p><img src="https://bingozai.s3.ap-east-1.amazonaws.com/blog/2019/08/05/optimize-influxdb.png" alt="优化后的内存占用"></p>
+<h2 id="遗留的问题"><a href="#遗留的问题" class="headerlink" title="遗留的问题"></a>遗留的问题</h2><p>虽然用 <code>Continuous Queries</code> + <code>Retention Policies</code> 做了处理，但其实大家都可以看出来如果是在短时间内有大量访问后，用 Last 3 hours （或者是更小的时间）查看，这个等于是没做优化的，内存占用还是会很多，这个暂时无解。</p>
+<p>还有就是 <code>Continuous Queries</code> 的 GEO 信息处理，是会根据 city 做 group by，所以如果是访问的地区比较分散的话，要生成的数据其实也是比较多。这种情况下，优化得并不是很好。好在我们希望的 <code>map3-edge</code> 是在每个城市都有部署，这样根据 city 做 group by 这种在以后节点越来越多后，就不再是一个问题。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://pommi.nethuis.nl/collectd-influxdb-grafana-with-downsampling/" target="_blank" rel="noopener">Server stats with collectd, InfluxDB and Grafana (with downsampling)</a> </li>
+<li><a href="https://docs.influxdata.com/influxdb/v1.7/guides/downsampling_and_retention/" target="_blank" rel="noopener">Downsampling and data retention</a></li>
+</ul>
 
             </div>
             <hr/>
@@ -625,9 +723,9 @@ Install from scriptCurlTo launch a map3 edge, you can use the install script usi
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Install Map3 Edge》
+                    《使用连续查询及保留策略优化InfluxDB存储空间及内存占用》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/08/02/install-map3-edge-on-linux-or-mac/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/08/05/optimize-influxdb/" property="cc:attributionName"
                rel="cc:attributionURL">
                 陈斌
             </a> 采用
@@ -668,7 +766,7 @@ Install from scriptCurlTo launch a map3 edge, you can use the install script usi
         repo: 'blog',
         owner: 'bingochen87',
         admin: ["bingochen87"],
-        id: '2019-08-02T15-57-19',
+        id: '2019-08-05T15-53-27',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -689,29 +787,30 @@ Install from scriptCurlTo launch a map3 edge, you can use the install script usi
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/08/02/deploy-map3-on-aws/">
+                <a href="/2019/08/05/optimize-influxdb/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Deploy Map3 Edge on AWS">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="使用连续查询及保留策略优化InfluxDB存储空间及内存占用">
                         
-                        <span class="card-title">Deploy Map3 Edge on AWS</span>
+                        <span class="card-title">使用连续查询及保留策略优化InfluxDB存储空间及内存占用</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Deploy Map3 Edge On Amazon AWS
+                            在 `telegraf` 及 `geostat` 启动的时候，初始化连续查询及保留策略优化InfluxDB存储空间及内存占用（InfluxDB需要6.0或以上版本）
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-02
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-05
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -720,35 +819,44 @@ Install from scriptCurlTo launch a map3 edge, you can use the install script usi
                                     技术
                                 </a>
                             
-                            <a href="/categories/技术/Map3/" class="post-category" target="_blank">
-                                    Map3
+                            <a href="/categories/技术/数据库/" class="post-category" target="_blank">
+                                    数据库
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Map3/" target="_blank">
-                        <span class="chip bg-color">Map3</span>
+                    <a href="/tags/InfluxDB/" target="_blank">
+                        <span class="chip bg-color">InfluxDB</span>
                     </a>
                     
-                    <a href="/tags/Hyperion/" target="_blank">
-                        <span class="chip bg-color">Hyperion</span>
+                    <a href="/tags/时序数据库/" target="_blank">
+                        <span class="chip bg-color">时序数据库</span>
                     </a>
                     
-                    <a href="/tags/HYN/" target="_blank">
-                        <span class="chip bg-color">HYN</span>
+                    <a href="/tags/InfluxDB存储优化/" target="_blank">
+                        <span class="chip bg-color">InfluxDB存储优化</span>
                     </a>
                     
-                    <a href="/tags/Map/" target="_blank">
-                        <span class="chip bg-color">Map</span>
+                    <a href="/tags/InfluxDB内存优化/" target="_blank">
+                        <span class="chip bg-color">InfluxDB内存优化</span>
                     </a>
                     
-                    <a href="/tags/AWS/" target="_blank">
-                        <span class="chip bg-color">AWS</span>
+                    <a href="/tags/Continuous-Queries/" target="_blank">
+                        <span class="chip bg-color">Continuous Queries</span>
+                    </a>
+                    
+                    <a href="/tags/Retention-Policies/" target="_blank">
+                        <span class="chip bg-color">Retention Policies</span>
+                    </a>
+                    
+                    <a href="/tags/Docker/" target="_blank">
+                        <span class="chip bg-color">Docker</span>
                     </a>
                     
                 </div>
@@ -762,19 +870,19 @@ Install from scriptCurlTo launch a map3 edge, you can use the install script usi
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/08/02/deploy-map3-on-alicloud/">
+                <a href="/2019/08/02/sample-logs-data/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Deploy Map3 Edge on AliCloud">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="Kibana Sample Logs Data Dashboard">
                         
-                        <span class="card-title">Deploy Map3 Edge on AliCloud</span>
+                        <span class="card-title">Kibana Sample Logs Data Dashboard</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Deploy Map3 Edge On AliCloud
+                            Add Kibana sample logs data dashboard
                         
                     </div>
                     <div class="publish-info">
@@ -789,10 +897,6 @@ Install from scriptCurlTo launch a map3 edge, you can use the install script usi
                                     技术
                                 </a>
                             
-                            <a href="/categories/技术/Map3/" class="post-category" target="_blank">
-                                    Map3
-                                </a>
-                            
                             
                         </span>
                     </div>
@@ -800,28 +904,16 @@ Install from scriptCurlTo launch a map3 edge, you can use the install script usi
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Map3/" target="_blank">
-                        <span class="chip bg-color">Map3</span>
+                    <a href="/tags/Kibana/" target="_blank">
+                        <span class="chip bg-color">Kibana</span>
                     </a>
                     
-                    <a href="/tags/Hyperion/" target="_blank">
-                        <span class="chip bg-color">Hyperion</span>
+                    <a href="/tags/ES/" target="_blank">
+                        <span class="chip bg-color">ES</span>
                     </a>
                     
-                    <a href="/tags/HYN/" target="_blank">
-                        <span class="chip bg-color">HYN</span>
-                    </a>
-                    
-                    <a href="/tags/AliCloud/" target="_blank">
-                        <span class="chip bg-color">AliCloud</span>
-                    </a>
-                    
-                    <a href="/tags/Map/" target="_blank">
-                        <span class="chip bg-color">Map</span>
-                    </a>
-                    
-                    <a href="/tags/Aliyun/" target="_blank">
-                        <span class="chip bg-color">Aliyun</span>
+                    <a href="/tags/Elasticsearch/" target="_blank">
+                        <span class="chip bg-color">Elasticsearch</span>
                     </a>
                     
                 </div>

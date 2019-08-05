@@ -1,3 +1,4 @@
+https://blog.bingozai.com/2019/08/05/optimize-influxdb/
 https://blog.bingozai.com/2019/08/02/sample-logs-data/
 https://blog.bingozai.com/2019/08/02/deploy-map3-on-aws/
 https://blog.bingozai.com/2019/08/02/install-map3-edge-on-linux-or-mac/
