@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://blog.bingozai.com/2019/08/05/optimize-influxdb/</loc>
-    <lastmod>2019-08-05</lastmod>
+    <loc>https://blog.bingozai.com/2019/08/07/build-filebeat-from-alpine/</loc>
+    <lastmod>2019-08-07</lastmod>
   </url>  <url>
     <loc>https://blog.bingozai.com/2019/08/02/sample-logs-data/</loc>
-    <lastmod>2019-08-02</lastmod>
+    <lastmod>2019-08-07</lastmod>
+  </url>  <url>
+    <loc>https://blog.bingozai.com/2019/08/05/optimize-influxdb/</loc>
+    <lastmod>2019-08-05</lastmod>
   </url>  <url>
     <loc>https://blog.bingozai.com/2019/08/02/deploy-map3-on-aws/</loc>
     <lastmod>2019-08-02</lastmod>

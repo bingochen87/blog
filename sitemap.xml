@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://blog.bingozai.com/2019/08/05/optimize-influxdb/</loc>
+    <loc>https://blog.bingozai.com/2019/08/07/build-filebeat-from-alpine/</loc>
     
-    <lastmod>2019-08-05T07:53:27.234Z</lastmod>
+    <lastmod>2019-08-07T13:01:55.780Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://blog.bingozai.com/2019/08/02/sample-logs-data/</loc>
     
-    <lastmod>2019-08-02T07:57:22.187Z</lastmod>
+    <lastmod>2019-08-07T08:30:45.492Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.bingozai.com/2019/08/05/optimize-influxdb/</loc>
+    
+    <lastmod>2019-08-05T07:53:27.234Z</lastmod>
     
   </url>
   

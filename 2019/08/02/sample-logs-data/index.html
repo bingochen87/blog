@@ -5,7 +5,7 @@
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <meta name="keywords" content="Kibana Sample Logs Data Dashboard, Blog, blog, Chen bin, 陈斌, Bingo, bingo, bingo-zi, bingo-zai, bingozai, BingoZai, 博客">
-    <meta name="description" content="因为map3-node-edge从原来的map3-edge-dashboard移到docker-map3/map3-edge并开源了。过程中做了优化处理，去掉了几个docner container，其中包括metricbeat和heartb">
+    <meta name="description" content="因为map3-node-edge从原来的map3-edge-dashboard移到docker-map3/map3-edge并开源了。过程中做了优化处理，去掉了几个docker container，其中包括metricbeat和heartb">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -410,7 +410,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-08-02
+                    2019-08-07
                 </div>
 
                 
@@ -440,7 +440,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>因为<code>map3-node-edge</code>从原来的<code>map3-edge-dashboard</code>移到<code>docker-map3/map3-edge</code>并开源了。过程中做了优化处理，去掉了几个<code>docner container</code>，其中包括<code>metricbeat</code>和<code>heartbeat</code>。在处理总的<code>Kibana dashboard</code>过程中，不小心将几个索引数据删除掉了，导致<code>[Logs] Web Traffic</code>这个Dashboard用不了。</p>
+                <p>因为<code>map3-node-edge</code>从原来的<code>map3-edge-dashboard</code>移到<code>docker-map3/map3-edge</code>并开源了。过程中做了优化处理，去掉了几个<code>docker container</code>，其中包括<code>metricbeat</code>和<code>heartbeat</code>。在处理总的<code>Kibana dashboard</code>过程中，不小心将几个索引数据删除掉了，导致<code>[Logs] Web Traffic</code>这个Dashboard用不了。</p>
 <p>我首选想到的办法，居然是傻傻地照着原来的设置一个个地加回来，并且因为现在只剩下<code>filebeat</code>这个数据源，我天真地以为<code>kibana_sample_logs_data</code>这个索引数据是从其他两个已经是删除的beat来的，有些字段还对不上。</p>
 <p>折腾一番后，查了一下<code>kibana_sample_logs_data</code>发现这个数据是可以手动添加了。操作后，最终发现整个<code>[Logs] Web Traffic</code>这个Dashboard，就是点几下就可以出来，根本不需要自己去配置。哎，业务不精，真的是害死人。</p>
 <p>添加方法:</p>
@@ -669,7 +669,7 @@
         repo: 'blog',
         owner: 'bingochen87',
         admin: ["bingochen87"],
-        id: '2019-08-02T15-57-22',
+        id: '2019-08-07T16-30-45',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -694,6 +694,71 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
+                <a href="/2019/08/07/build-filebeat-from-alpine/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="使用 Alpine 做基础镜像构建 Filebeat 7.1.0">
+                        
+                        <span class="card-title">使用 Alpine 做基础镜像构建 Filebeat 7.1.0</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            使用 Alpine 做基础镜像构建 Filebeat 7.1.0，以减少 Filebeat 的镜像大小
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-07
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/技术/" class="post-category" target="_blank">
+                                    技术
+                                </a>
+                            
+                            <a href="/categories/技术/Docker/" class="post-category" target="_blank">
+                                    Docker
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Filebeat/" target="_blank">
+                        <span class="chip bg-color">Filebeat</span>
+                    </a>
+                    
+                    <a href="/tags/Filebeat-7-1-0/" target="_blank">
+                        <span class="chip bg-color">Filebeat 7.1.0</span>
+                    </a>
+                    
+                    <a href="/tags/Docker/" target="_blank">
+                        <span class="chip bg-color">Docker</span>
+                    </a>
+                    
+                    <a href="/tags/alpine/" target="_blank">
+                        <span class="chip bg-color">alpine</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
                 <a href="/2019/08/05/optimize-influxdb/">
                     <div class="card-image">
                         
@@ -710,9 +775,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-05
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-05
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -731,6 +796,10 @@
                 </div>
                 
                 <div class="card-action article-tags">
+                    
+                    <a href="/tags/Docker/" target="_blank">
+                        <span class="chip bg-color">Docker</span>
+                    </a>
                     
                     <a href="/tags/InfluxDB/" target="_blank">
                         <span class="chip bg-color">InfluxDB</span>
@@ -754,79 +823,6 @@
                     
                     <a href="/tags/Retention-Policies/" target="_blank">
                         <span class="chip bg-color">Retention Policies</span>
-                    </a>
-                    
-                    <a href="/tags/Docker/" target="_blank">
-                        <span class="chip bg-color">Docker</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2019/08/02/deploy-map3-on-aws/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Deploy Map3 Edge on AWS">
-                        
-                        <span class="card-title">Deploy Map3 Edge on AWS</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            Deploy Map3 Edge On Amazon AWS
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-02
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/技术/" class="post-category" target="_blank">
-                                    技术
-                                </a>
-                            
-                            <a href="/categories/技术/Map3/" class="post-category" target="_blank">
-                                    Map3
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Map3/" target="_blank">
-                        <span class="chip bg-color">Map3</span>
-                    </a>
-                    
-                    <a href="/tags/Hyperion/" target="_blank">
-                        <span class="chip bg-color">Hyperion</span>
-                    </a>
-                    
-                    <a href="/tags/HYN/" target="_blank">
-                        <span class="chip bg-color">HYN</span>
-                    </a>
-                    
-                    <a href="/tags/Map/" target="_blank">
-                        <span class="chip bg-color">Map</span>
-                    </a>
-                    
-                    <a href="/tags/AWS/" target="_blank">
-                        <span class="chip bg-color">AWS</span>
                     </a>
                     
                 </div>
@@ -947,7 +943,7 @@
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">3.2k</span>
+                <span class="white-color">4k</span>
             
 
             
