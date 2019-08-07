@@ -6,7 +6,7 @@ summary: Add Kibana sample logs data dashboard
 reward: true
 ---
 
-因为`map3-node-edge`从原来的`map3-edge-dashboard`移到`docker-map3/map3-edge`并开源了。过程中做了优化处理，去掉了几个`docner container`，其中包括`metricbeat`和`heartbeat`。在处理总的`Kibana dashboard`过程中，不小心将几个索引数据删除掉了，导致`[Logs] Web Traffic`这个Dashboard用不了。
+因为`map3-node-edge`从原来的`map3-edge-dashboard`移到`docker-map3/map3-edge`并开源了。过程中做了优化处理，去掉了几个`docker container`，其中包括`metricbeat`和`heartbeat`。在处理总的`Kibana dashboard`过程中，不小心将几个索引数据删除掉了，导致`[Logs] Web Traffic`这个Dashboard用不了。
 
 我首选想到的办法，居然是傻傻地照着原来的设置一个个地加回来，并且因为现在只剩下`filebeat`这个数据源，我天真地以为`kibana_sample_logs_data`这个索引数据是从其他两个已经是删除的beat来的，有些字段还对不上。
 
