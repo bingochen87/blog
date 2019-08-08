@@ -112,7 +112,7 @@ CMD ["-e"]
 
 优化效果，非常明显，直接就减少了 184MB的大小。
 
-### 遇到的坑
+## 遇到的坑
 * 官方的示例里面没有处理 `/usr/local/bin/docker-entrypoint` 的运行权限问题，如果是没有加 `RUN chmod 755 /usr/local/bin/docker-entrypoint`，就会报 'standard_init_linux.go:175: exec user process caused "no such file or directory' 这个错。
 * 因为从7.x开始，应该是用了 glibc 编译 filebeat，所以直接将 filebeat 下载到 alipne 里面运行，会报 `/usr/local/bin/docker-entrypoint: line 13: /usr/share/filebeat/filebeat: No such file or directory`。修复的办法就是在 Dockerfile 里面加入：
     ```dockerfile
