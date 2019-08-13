@@ -22,11 +22,11 @@
       
         <tags>
             
-            <tag> Docker </tag>
-            
             <tag> Filebeat </tag>
             
             <tag> Filebeat 7.1.0 </tag>
+            
+            <tag> Docker </tag>
             
             <tag> alpine </tag>
             
@@ -84,6 +84,8 @@
       
         <tags>
             
+            <tag> Docker </tag>
+            
             <tag> InfluxDB </tag>
             
             <tag> 时序数据库 </tag>
@@ -95,8 +97,6 @@
             <tag> Continuous Queries </tag>
             
             <tag> Retention Policies </tag>
-            
-            <tag> Docker </tag>
             
         </tags>
       
