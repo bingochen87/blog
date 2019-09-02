@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.bingozai.com/2019/09/02/docker-ce-multiple-systems-install-script/</loc>
+    
+    <lastmod>2019-09-02T02:53:02.711Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.bingozai.com/2019/08/07/build-filebeat-from-alpine/</loc>
     
     <lastmod>2019-08-08T02:40:42.794Z</lastmod>
