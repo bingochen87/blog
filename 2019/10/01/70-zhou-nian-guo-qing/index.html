@@ -4,9 +4,9 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Docker CE 多系统安装脚本, Blog, blog, Chen bin, 陈斌, Bingo, bingo, bingo-zi, bingo-zai, bingozai, BingoZai, 博客">
-    <meta name="description" content="Docker-CE的官方 install.sh 其实已经是过期了，在一些系统上，安装是有问题的，例如 Cent OS 及 RHEL （我知道 RHEL 应该是安装 Docker ee）。以下脚本可以支持多系统一个脚本搞定。
-支持的系统包括以">
+    <meta name="keywords" content="庆祝中国人民共和国成立70周年, Blog, blog, Chen bin, 陈斌, Bingo, bingo, bingo-zi, bingo-zai, bingozai, BingoZai, 博客">
+    <meta name="description" content="
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +15,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google-site-verification" content="CBNzwOC3eO-DR905SiwMLYzufMXYnK7V87daNMoi_BQ">
-    <title>Docker CE 多系统安装脚本 | 冰果仔</title>
+    <title>庆祝中国人民共和国成立70周年 | 冰果仔</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -262,13 +262,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Docker CE 多系统安装脚本
+                        庆祝中国人民共和国成立70周年
                     </div>
                 </div>
             </div>
@@ -379,8 +379,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Docker/" target="_blank">
-                                <span class="chip bg-color">Docker</span>
+                            <a href="/tags/国庆/" target="_blank">
+                                <span class="chip bg-color">国庆</span>
+                            </a>
+                        
+                            <a href="/tags/国庆70周年/" target="_blank">
+                                <span class="chip bg-color">国庆70周年</span>
                             </a>
                         
                     </div>
@@ -391,8 +395,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/技术/" class="post-category" target="_blank">
-                                技术
+                            <a href="/categories/其他/" class="post-category" target="_blank">
+                                其他
                             </a>
                         
                     </div>
@@ -403,21 +407,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-09-02
+                    2019-09-30
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        657
+                        0
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        3 分
+                        1 分
                     </div>
                     
                 
@@ -433,158 +437,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Docker-CE的官方 install.sh 其实已经是过期了，在一些系统上，安装是有问题的，例如 <code>Cent OS</code> 及 <code>RHEL</code> （我知道 <code>RHEL</code> 应该是安装 Docker ee）。以下脚本可以支持多系统一个脚本搞定。</p>
-<h3 id="支持的系统"><a href="#支持的系统" class="headerlink" title="支持的系统"></a>支持的系统</h3><p>包括以下的，但对应的系统要求，请点击对应的系统查看。</p>
-<ul>
-<li><a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/docker-basics.html" target="_blank" rel="noopener">Amazon Linux</a></li>
-<li><a href="https://docs.docker.com/install/linux/docker-ce/centos/#os-requirements" target="_blank" rel="noopener">CentOS</a></li>
-<li><a href="https://docs.docker.com/install/linux/docker-ce/debian/#os-requirements" target="_blank" rel="noopener">Debian</a></li>
-<li><a href="https://docs.docker.com/install/linux/docker-ce/fedora/#os-requirements" target="_blank" rel="noopener">Fedora</a></li>
-<li><a href="https://docs.docker.com/install/linux/docker-ee/rhel/#os-requirements" target="_blank" rel="noopener">RHEL(RedHat)</a></li>
-<li><a href="https://docs.docker.com/install/linux/docker-ce/ubuntu/#os-requirements" target="_blank" rel="noopener">Ubuntu</a></li>
-</ul>
-<h3 id="安装脚本"><a href="#安装脚本" class="headerlink" title="安装脚本"></a>安装脚本</h3><pre class=" language-bash"><code class="language-bash"><span class="token shebang important">#!/bin/sh</span>
-<span class="token keyword">set</span> -e
-
-get_distribution<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    lsb_dist<span class="token operator">=</span><span class="token string">""</span>
-    <span class="token comment" spellcheck="true"># Every system that we officially support has /etc/os-release</span>
-    <span class="token keyword">if</span> <span class="token punctuation">[</span> -r /etc/os-release <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-        lsb_dist<span class="token operator">=</span><span class="token string">"$(. /etc/os-release &amp;&amp; echo "</span><span class="token variable">$ID</span><span class="token string">")"</span>
-    <span class="token keyword">fi</span>
-    <span class="token comment" spellcheck="true"># Returning an empty string here should be alright since the</span>
-    <span class="token comment" spellcheck="true"># case statements don't act unless you provide an actual value</span>
-    <span class="token keyword">echo</span> <span class="token string">"<span class="token variable">$lsb_dist</span>"</span>
-<span class="token punctuation">}</span>
-
-befor_install_docker<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    user<span class="token operator">=</span><span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">id</span> -un 2<span class="token operator">></span>/dev/null <span class="token operator">||</span> <span class="token boolean">true</span><span class="token variable">)</span></span>"</span>
-
-    sh_c<span class="token operator">=</span><span class="token string">'sh -c'</span>
-    <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">$user</span>"</span> <span class="token operator">!=</span> <span class="token string">'root'</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-        <span class="token keyword">if</span> command_exists <span class="token function">sudo</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-            sh_c<span class="token operator">=</span><span class="token string">'sudo -E sh -c'</span>
-        <span class="token keyword">elif</span> command_exists <span class="token function">su</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-            sh_c<span class="token operator">=</span><span class="token string">'su -c'</span>
-        <span class="token keyword">else</span>
-            <span class="token function">cat</span> <span class="token operator">></span><span class="token operator">&amp;</span>2 <span class="token operator">&lt;&lt;</span>-<span class="token string">'EOF'</span>
-            Error: this installer needs the ability to run commands as root.
-            We are unable to <span class="token function">find</span> either <span class="token string">"sudo"</span> or <span class="token string">"su"</span> available to <span class="token function">make</span> this happen.
-            EOF
-            <span class="token keyword">exit</span> 1
-        <span class="token keyword">fi</span>
-    <span class="token keyword">fi</span>
-
-    lsb_dist<span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span> get_distribution <span class="token variable">)</span></span>
-    lsb_dist<span class="token operator">=</span><span class="token string">"$(echo "</span><span class="token variable">$lsb_dist</span><span class="token string">" | tr '[:upper:]' '[:lower:]')"</span>
-    <span class="token keyword">case</span> <span class="token string">"<span class="token variable">$lsb_dist</span>"</span> <span class="token keyword">in</span>
-
-        centos<span class="token punctuation">)</span>
-            <span class="token comment" spellcheck="true"># add aliyun epel repo</span>
-            <span class="token function">sudo</span> <span class="token function">cp</span> /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo_back
-            <span class="token function">sudo</span> <span class="token function">wget</span> -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
-            <span class="token function">sudo</span> yum makecache -y
-            <span class="token function">sudo</span> yum <span class="token function">install</span> -y epel-release
-        <span class="token punctuation">;</span><span class="token punctuation">;</span>
-
-    esac
-<span class="token punctuation">}</span>
-
-install_docker<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    lsb_dist<span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span> get_distribution <span class="token variable">)</span></span>
-    lsb_dist<span class="token operator">=</span><span class="token string">"$(echo "</span><span class="token variable">$lsb_dist</span><span class="token string">" | tr '[:upper:]' '[:lower:]')"</span>
-    <span class="token keyword">case</span> <span class="token string">"<span class="token variable">$lsb_dist</span>"</span> <span class="token keyword">in</span>
-
-        redhat<span class="token operator">|</span>rhel<span class="token punctuation">)</span>
-            <span class="token comment" spellcheck="true"># https://docs.docker.com/install/linux/docker-ce/centos/</span>
-            <span class="token function">sudo</span> yum remove -y docker \
-                     docker-client \
-                     docker-client-latest \
-                     docker-common \
-                     docker-latest \
-                     docker-latest-logrotate \
-                     docker-logrotate \
-                     docker-engine
-
-
-            <span class="token function">sudo</span> yum <span class="token function">install</span> -y yum-utils \
-                device-mapper-persistent-data \
-                lvm2
-
-            <span class="token function">sudo</span> yum-config-manager \
-                --add-repo \
-                https://download.docker.com/linux/centos/docker-ce.repo
-
-            <span class="token function">sudo</span> yum <span class="token function">install</span> -y containerd.io docker-ce-18.09.1 docker-ce-cli-18.09.1
-        <span class="token punctuation">;</span><span class="token punctuation">;</span>
-
-        amzn<span class="token punctuation">)</span>
-            <span class="token function">sudo</span> yum update -y
-            <span class="token function">sudo</span> amazon-linux-extras <span class="token function">install</span> docker
-        <span class="token punctuation">;</span><span class="token punctuation">;</span>
-
-        *<span class="token punctuation">)</span>
-            curl -fsSL https://get.docker.com <span class="token operator">|</span> <span class="token function">bash</span>
-        <span class="token punctuation">;</span><span class="token punctuation">;</span>
-
-    esac
-<span class="token punctuation">}</span>
-
-after_install_docker<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token function">sudo</span> <span class="token function">usermod</span> -aG docker <span class="token variable"><span class="token variable">`</span><span class="token function">logname</span><span class="token variable">`</span></span>
-
-    lsb_dist<span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span> get_distribution <span class="token variable">)</span></span>
-    lsb_dist<span class="token operator">=</span><span class="token string">"$(echo "</span><span class="token variable">$lsb_dist</span><span class="token string">" | tr '[:upper:]' '[:lower:]')"</span>
-    <span class="token keyword">case</span> <span class="token string">"<span class="token variable">$lsb_dist</span>"</span> <span class="token keyword">in</span>
-
-        <span class="token comment" spellcheck="true"># start docker for centos/fedora/redhat</span>
-        centos<span class="token operator">|</span>fedora<span class="token operator">|</span>redhat<span class="token operator">|</span>rhel<span class="token punctuation">)</span>
-            <span class="token function">sudo</span> systemctl <span class="token function">enable</span> docker.service
-            <span class="token function">sudo</span> systemctl start docker
-        <span class="token punctuation">;</span><span class="token punctuation">;</span>
-
-        amzn<span class="token punctuation">)</span>
-            <span class="token function">sudo</span> <span class="token function">service</span> docker start
-        <span class="token punctuation">;</span><span class="token punctuation">;</span>
-
-    esac
-
-    <span class="token keyword">case</span> <span class="token string">"<span class="token variable">$lsb_dist</span>"</span> <span class="token keyword">in</span>
-
-        <span class="token comment" spellcheck="true"># install iptable_nat for redhat</span>
-        redhat<span class="token operator">|</span>rhel<span class="token punctuation">)</span>
-            <span class="token function">sudo</span> modprobe iptable_nat
-            <span class="token comment" spellcheck="true"># persistent</span>
-            <span class="token function">cat</span> <span class="token operator">></span> /etc/sysconfig/modules/dockerd.modules <span class="token operator">&lt;&lt;</span>- ENDEND
-<span class="token comment" spellcheck="true">#!/bin/sh</span>
-
-<span class="token function">exec</span> /sbin/modprobe iptable_nat <span class="token operator">></span>/dev/null 2<span class="token operator">></span><span class="token operator">&amp;</span>1
-ENDEND
-
-            <span class="token function">sudo</span> <span class="token function">chmod</span> +x /etc/sysconfig/modules/dockerd.modules
-        <span class="token punctuation">;</span><span class="token punctuation">;</span>
-
-    esac
-<span class="token punctuation">}</span>
-
-install<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    befor_install_docker
-    install_docker
-    after_install_docker
-<span class="token punctuation">}</span>
-
-<span class="token function">install</span></code></pre>
-<h3 id="关键的点"><a href="#关键的点" class="headerlink" title="关键的点"></a>关键的点</h3><p>对于 Debian、Ubuntu、Amazon Linux、Fedora 这些系统没什么好说的，关键是 Cent OS 及 RHEL 这两个。</p>
-<p>Cent OS 需要使用第三方源来安装，还不能用 <code>epel</code> 这个源，里面并没有 docker ce的东西。我用的是 <code>aliyun</code> 的。添加完源，就可以使用 docker 官方的安装脚本安装了。</p>
-<p>对于 RHEL，可以直接按照 <a href="https://docs.docker.com/install/linux/docker-ce/centos/" target="_blank" rel="noopener">docker-ce/centos</a> 这个来安装。但是，安装完后，会发现网络有问题（具体是什么问题我就不贴出了），需要用以下方法处理才可以。</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> modprobe iptable_nat
-<span class="token function">cat</span> <span class="token operator">></span> /etc/sysconfig/modules/dockerd.modules <span class="token operator">&lt;&lt;</span>- ENDEND
-<span class="token comment" spellcheck="true">#!/bin/sh</span>
-
-<span class="token function">exec</span> /sbin/modprobe iptable_nat <span class="token operator">></span>/dev/null 2<span class="token operator">></span><span class="token operator">&amp;</span>1
-ENDEND
-
-<span class="token function">sudo</span> <span class="token function">chmod</span> +x /etc/sysconfig/modules/dockerd.modules</code></pre>
+                <p><img src="https://bingozai.s3.ap-east-1.amazonaws.com/blog/2019/10/01/70zhuonian.jpg" alt></p>
 
             </div>
             <hr/>
@@ -607,130 +460,6 @@ ENDEND
 
             
 
-            
-            <style>
-    #reward {
-        margin: 40px 0;
-        text-align: center;
-    }
-
-    #reward .reward-link {
-        font-size: 1.88rem;
-    }
-
-    #reward .btn-floating:hover {
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    #rewardModal {
-        width: 320px;
-        height: 350px;
-    }
-
-    #rewardModal .reward-title {
-        margin: 15px auto;
-        padding-bottom: 5px;
-    }
-
-    #rewardModal .modal-content {
-        padding: 10px;
-    }
-
-    #rewardModal .close {
-        position: absolute;
-        right: 15px;
-        top: 15px;
-        color: rgba(0, 0, 0, 0.5);
-        font-size: 1.3rem;
-        line-height: 20px;
-        cursor: pointer;
-    }
-
-    #rewardModal .close:hover {
-        color: #ef5350;
-        transform: scale(1.3);
-        -moz-transform:scale(1.3);
-        -webkit-transform:scale(1.3);
-        -o-transform:scale(1.3);
-    }
-
-    #rewardModal .reward-tabs {
-        margin: 0 auto;
-        width: 210px;
-    }
-
-    .reward-tabs .tabs {
-        height: 38px;
-        margin: 10px auto;
-        padding-left: 0;
-    }
-
-    .reward-content ul {
-        padding-left: 0 !important;
-    }
-
-    .reward-tabs .tabs .tab {
-        height: 38px;
-        line-height: 38px;
-    }
-
-    .reward-tabs .tab a {
-        color: #fff;
-        background-color: #ccc;
-    }
-
-    .reward-tabs .tab a:hover {
-        background-color: #ccc;
-        color: #fff;
-    }
-
-    .reward-tabs .wechat-tab .active {
-        color: #fff !important;
-        background-color: #22AB38 !important;
-    }
-
-    .reward-tabs .alipay-tab .active {
-        color: #fff !important;
-        background-color: #019FE8 !important;
-    }
-
-    .reward-tabs .reward-img {
-        width: 210px;
-        height: 210px;
-    }
-</style>
-
-<div id="reward">
-    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
-
-    <!-- Modal Structure -->
-    <div id="rewardModal" class="modal">
-        <div class="modal-content">
-            <a class="close modal-close"><i class="fa fa-close"></i></a>
-            <h4 class="reward-title">你的赏识是我前进的动力</h4>
-            <div class="reward-content">
-                <div class="reward-tabs">
-                    <ul class="tabs row">
-                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
-                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
-                    </ul>
-                    <div id="alipay">
-                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
-                    </div>
-                    <div id="wechat">
-                        <img src="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<script>
-    $(function () {
-        $('.tabs').tabs();
-    });
-</script>
             
 
             <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
@@ -761,9 +490,9 @@ ENDEND
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Docker CE 多系统安装脚本》
+                    《庆祝中国人民共和国成立70周年》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/09/02/docker-ce-multiple-systems-install-script/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/10/01/70-zhou-nian-guo-qing/" property="cc:attributionName"
                rel="cc:attributionURL">
                 陈斌
             </a> 采用
@@ -804,7 +533,7 @@ ENDEND
         repo: 'blog',
         owner: 'bingochen87',
         admin: ["bingochen87"],
-        id: '2019-09-02T10-53-02',
+        id: '2019-09-30T11-54-22',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -825,9 +554,10 @@ ENDEND
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2019/10/01/70-zhou-nian-guo-qing/">
                     <div class="card-image">
@@ -845,9 +575,9 @@ ENDEND
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-30
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-30
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -860,6 +590,7 @@ ENDEND
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -882,24 +613,24 @@ ENDEND
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/08/07/build-filebeat-from-alpine/">
+                <a href="/2019/09/02/docker-ce-multiple-systems-install-script/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="使用 Alpine 做基础镜像构建 Filebeat 7.1.0">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="Docker CE 多系统安装脚本">
                         
-                        <span class="card-title">使用 Alpine 做基础镜像构建 Filebeat 7.1.0</span>
+                        <span class="card-title">Docker CE 多系统安装脚本</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            使用 Alpine 做基础镜像构建 Filebeat 7.1.0，以减少 Filebeat 的镜像大小
+                            Docker-CE 多系统安装脚本
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-08
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-02
                             </span>
                         <span class="publish-author">
                             
@@ -909,10 +640,6 @@ ENDEND
                                     技术
                                 </a>
                             
-                            <a href="/categories/技术/Docker/" class="post-category" target="_blank">
-                                    Docker
-                                </a>
-                            
                             
                         </span>
                     </div>
@@ -920,20 +647,8 @@ ENDEND
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Filebeat/" target="_blank">
-                        <span class="chip bg-color">Filebeat</span>
-                    </a>
-                    
-                    <a href="/tags/Filebeat-7-1-0/" target="_blank">
-                        <span class="chip bg-color">Filebeat 7.1.0</span>
-                    </a>
-                    
                     <a href="/tags/Docker/" target="_blank">
                         <span class="chip bg-color">Docker</span>
-                    </a>
-                    
-                    <a href="/tags/alpine/" target="_blank">
-                        <span class="chip bg-color">alpine</span>
                     </a>
                     
                 </div>

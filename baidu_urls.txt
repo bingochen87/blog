@@ -1,3 +1,4 @@
+https://blog.bingozai.com/2019/10/01/70-zhou-nian-guo-qing/
 https://blog.bingozai.com/2019/09/02/docker-ce-multiple-systems-install-script/
 https://blog.bingozai.com/2019/08/07/build-filebeat-from-alpine/
 https://blog.bingozai.com/2019/08/02/sample-logs-data/
